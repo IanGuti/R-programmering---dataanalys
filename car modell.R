@@ -119,7 +119,7 @@ legend("topright", legend = c("Training", "Test"), col = c("blue", "black"), pch
 
 # See how a linear model with standard values preforms
 
-lin_mod <- lm(Pris ~ ., data = car_data_filter_2)
+lin_mod <- lm(Pris ~ ., data = train_set)
 predictor_1 <- predict(lin_mod, test_set)
 
 modell_summary <- summary(lin_mod)
@@ -203,7 +203,7 @@ train_samples <- sample(seq(2375), 1662, replace = FALSE)
 train_set <- car_data_filter_2[train_samples, ]
 test_set <- car_data_filter_2[-train_samples, ]
 
-lin_mod_2 <- lm(Pris ~ ., data = car_data_filter_2)
+lin_mod_2 <- lm(Pris ~ ., data = train_set)
 predictor_2 <- predict(lin_mod_2, test_set)
 predictor_train <- predict(lin_mod_2, train_set)
 
